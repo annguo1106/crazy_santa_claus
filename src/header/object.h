@@ -158,7 +158,6 @@ private:
     vector<float> normals;
     vector<float> texcoords;
     unsigned int texture;
-    // unsigned int material;
     unsigned int VAO; 
     unsigned int VBO[3];
     int numFace = 0;

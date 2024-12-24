@@ -14,17 +14,13 @@ void Object::load_texture(const std::string &filepath){
     unsigned char *data = stbi_load(filepath.c_str(), &width, &height, &nrChannels, 0);
 
     if (data) {
-        // GLenum format = (nrChannels == 4) ? GL_RGBA : GL_RGB;
-        GLenum format = GL_RGB;
-        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
     } else {
         std::cout << "Failed to load texture1" << std::endl;
     }
     glBindTexture(GL_TEXTURE_2D, 0);
     stbi_image_free(data);
 }
-
-
 
 void Object::load_to_buffer(){
     glGenVertexArrays(1, &VAO);
