@@ -34,5 +34,12 @@ void main() {
     vec4 worldPos = model * vec4(distortedPos, 1.0);
     fragPos = worldPos.xyz;
     fragNormal = mat3(transpose(inverse(model))) * aNormal;
+    
+    
+    // float offsetx = sin(time + aPos.y) * 2.0f;
+    // float offsety = cos(time + aPos.x) * 2.0f;
+
+    // vec3 staggeredPosition = aPos + vec3(offsetx, offsety, 0.0);
+	// gl_Position = projection * view * model * vec4(staggeredPosition, 1.0);
     gl_Position = projection * view * worldPos;        
 }

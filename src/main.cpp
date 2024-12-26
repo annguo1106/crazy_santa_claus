@@ -187,6 +187,7 @@ void shader_setup(){
         "rainbow",
         "water",
         "watertrans",
+        "stagger",
         // "bling-phong", "gouraud", "metallic",   // addional shading effects (basic)
         // "glass_schlick", "glass_empricial",     // addional shading effects (advanced)
     };
