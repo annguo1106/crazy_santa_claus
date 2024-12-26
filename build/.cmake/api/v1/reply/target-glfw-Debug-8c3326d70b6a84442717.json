@@ -132,15 +132,15 @@
 			[
 				{
 					"backtrace" : 7,
-					"path" : "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glfw/include"
+					"path" : "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glfw/include"
 				},
 				{
 					"backtrace" : 8,
-					"path" : "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glfw/src"
+					"path" : "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glfw/src"
 				},
 				{
 					"backtrace" : 8,
-					"path" : "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glfw/src"
+					"path" : "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glfw/src"
 				}
 			],
 			"language" : "C",

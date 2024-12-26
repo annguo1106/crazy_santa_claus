@@ -110,7 +110,7 @@ void Object::render(){
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, mesh.textureID);
         // }
-        // Draw the object
+        // Draw the Objectmat
         // glBindVertexArray(mesh.VAO);
         GLint currentVAO;
         glGetIntegerv(GL_VERTEX_ARRAY_BINDING, &currentVAO);

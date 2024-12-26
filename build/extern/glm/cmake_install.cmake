@@ -1,4 +1,4 @@
-# Install script for directory: C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glm
+# Install script for directory: C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glm/glm/cmake_install.cmake")
+  include("C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glm/glm/cmake_install.cmake")
 
 endif()
 

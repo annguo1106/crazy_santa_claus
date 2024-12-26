@@ -217,28 +217,28 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "ICG_2024_HW3::@145eef247bfb46b6828c",
-					"jsonFile" : "target-ICG_2024_HW3-Debug-9bf185dc0f942b2508e1.json",
+					"jsonFile" : "target-ICG_2024_HW3-Debug-1ead871c59b166d2987f.json",
 					"name" : "ICG_2024_HW3",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 8,
 					"id" : "glad::@6d81f930c6bec73dde7b",
-					"jsonFile" : "target-glad-Debug-46fe369e4d2181ee18f4.json",
+					"jsonFile" : "target-glad-Debug-18f7fd66e24fe00279ee.json",
 					"name" : "glad",
 					"projectIndex" : 3
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "glfw::@81d610105217ee077306",
-					"jsonFile" : "target-glfw-Debug-0e38c4fbfd5fc19269fc.json",
+					"jsonFile" : "target-glfw-Debug-8c3326d70b6a84442717.json",
 					"name" : "glfw",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 7,
 					"id" : "glm::@fd9a7823937da46381f5",
-					"jsonFile" : "target-glm-Debug-6adc6fdc57ef70be3f76.json",
+					"jsonFile" : "target-glm-Debug-171e3bf52b23b461cc6c.json",
 					"name" : "glm",
 					"projectIndex" : 2
 				},
@@ -262,8 +262,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build",
-		"source" : "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus"
+		"build" : "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build",
+		"source" : "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus"
 	},
 	"version" : 
 	{

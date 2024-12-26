@@ -53,10 +53,10 @@ RM = "C:/Program Files/CMake/bin/cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus"
+CMAKE_SOURCE_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build"
+CMAKE_BINARY_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build"
 
 # Utility rule file for update_mappings.
 
@@ -67,8 +67,8 @@ include extern/glfw/src/CMakeFiles/update_mappings.dir/compiler_depend.make
 include extern/glfw/src/CMakeFiles/update_mappings.dir/progress.make
 
 extern/glfw/src/CMakeFiles/update_mappings:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glfw/src" && "C:/Program Files/CMake/bin/cmake.exe" -P "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glfw/CMake/GenerateMappings.cmake" mappings.h.in mappings.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glfw/src" && "C:/Program Files/CMake/bin/cmake.exe" -P "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glfw/CMake/GenerateMappings.cmake" mappings.h.in mappings.h
 
 update_mappings: extern/glfw/src/CMakeFiles/update_mappings
 update_mappings: extern/glfw/src/CMakeFiles/update_mappings.dir/build.make
@@ -79,10 +79,10 @@ extern/glfw/src/CMakeFiles/update_mappings.dir/build: update_mappings
 .PHONY : extern/glfw/src/CMakeFiles/update_mappings.dir/build
 
 extern/glfw/src/CMakeFiles/update_mappings.dir/clean:
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glfw/src" && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glfw/src" && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
 .PHONY : extern/glfw/src/CMakeFiles/update_mappings.dir/clean
 
 extern/glfw/src/CMakeFiles/update_mappings.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glfw/src" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glfw/src" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake" "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glfw/src" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glfw/src" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : extern/glfw/src/CMakeFiles/update_mappings.dir/depend
 

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glm/glm/detail/glm.cpp" "extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj" "gcc" "extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj.d"
+  "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/detail/glm.cpp" "extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj" "gcc" "extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

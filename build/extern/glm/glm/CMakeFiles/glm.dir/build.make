@@ -53,10 +53,10 @@ RM = "C:/Program Files/CMake/bin/cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus"
+CMAKE_SOURCE_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build"
+CMAKE_BINARY_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build"
 
 # Include any dependencies generated for this target.
 include extern/glm/glm/CMakeFiles/glm.dir/depend.make
@@ -71,18 +71,18 @@ include extern/glm/glm/CMakeFiles/glm.dir/flags.make
 
 extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj: extern/glm/glm/CMakeFiles/glm.dir/flags.make
 extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj: extern/glm/glm/CMakeFiles/glm.dir/includes_CXX.rsp
-extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj: C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glm/glm/detail/glm.cpp
+extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj: C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/detail/glm.cpp
 extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj: extern/glm/glm/CMakeFiles/glm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj"
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glm/glm" && C:/w64devkit/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj -MF CMakeFiles/glm.dir/detail/glm.cpp.obj.d -o CMakeFiles/glm.dir/detail/glm.cpp.obj -c "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glm/glm/detail/glm.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj"
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glm/glm" && C:/w64devkit/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj -MF CMakeFiles/glm.dir/detail/glm.cpp.obj.d -o CMakeFiles/glm.dir/detail/glm.cpp.obj -c "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/detail/glm.cpp"
 
 extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/glm.dir/detail/glm.cpp.i"
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glm/glm" && C:/w64devkit/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glm/glm/detail/glm.cpp" > CMakeFiles/glm.dir/detail/glm.cpp.i
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glm/glm" && C:/w64devkit/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/detail/glm.cpp" > CMakeFiles/glm.dir/detail/glm.cpp.i
 
 extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/glm.dir/detail/glm.cpp.s"
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glm/glm" && C:/w64devkit/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glm/glm/detail/glm.cpp" -o CMakeFiles/glm.dir/detail/glm.cpp.s
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glm/glm" && C:/w64devkit/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/detail/glm.cpp" -o CMakeFiles/glm.dir/detail/glm.cpp.s
 
 # Object files for target glm
 glm_OBJECTS = \
@@ -94,19 +94,19 @@ glm_EXTERNAL_OBJECTS =
 extern/glm/glm/libglm.a: extern/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.obj
 extern/glm/glm/libglm.a: extern/glm/glm/CMakeFiles/glm.dir/build.make
 extern/glm/glm/libglm.a: extern/glm/glm/CMakeFiles/glm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libglm.a"
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glm/glm" && $(CMAKE_COMMAND) -P CMakeFiles/glm.dir/cmake_clean_target.cmake
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glm/glm" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glm.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libglm.a"
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glm/glm" && $(CMAKE_COMMAND) -P CMakeFiles/glm.dir/cmake_clean_target.cmake
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glm/glm" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glm.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 extern/glm/glm/CMakeFiles/glm.dir/build: extern/glm/glm/libglm.a
 .PHONY : extern/glm/glm/CMakeFiles/glm.dir/build
 
 extern/glm/glm/CMakeFiles/glm.dir/clean:
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glm/glm" && $(CMAKE_COMMAND) -P CMakeFiles/glm.dir/cmake_clean.cmake
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glm/glm" && $(CMAKE_COMMAND) -P CMakeFiles/glm.dir/cmake_clean.cmake
 .PHONY : extern/glm/glm/CMakeFiles/glm.dir/clean
 
 extern/glm/glm/CMakeFiles/glm.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glm/glm" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glm/glm" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glm/glm/CMakeFiles/glm.dir/DependInfo.cmake" "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glm/glm" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glm/glm" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glm/glm/CMakeFiles/glm.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : extern/glm/glm/CMakeFiles/glm.dir/depend
 

@@ -53,10 +53,10 @@ RM = "C:/Program Files/CMake/bin/cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus"
+CMAKE_SOURCE_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build"
+CMAKE_BINARY_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build"
 
 # Include any dependencies generated for this target.
 include extern/glad/CMakeFiles/glad.dir/depend.make
@@ -71,18 +71,18 @@ include extern/glad/CMakeFiles/glad.dir/flags.make
 
 extern/glad/CMakeFiles/glad.dir/src/glad.c.obj: extern/glad/CMakeFiles/glad.dir/flags.make
 extern/glad/CMakeFiles/glad.dir/src/glad.c.obj: extern/glad/CMakeFiles/glad.dir/includes_C.rsp
-extern/glad/CMakeFiles/glad.dir/src/glad.c.obj: C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glad/src/glad.c
+extern/glad/CMakeFiles/glad.dir/src/glad.c.obj: C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glad/src/glad.c
 extern/glad/CMakeFiles/glad.dir/src/glad.c.obj: extern/glad/CMakeFiles/glad.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object extern/glad/CMakeFiles/glad.dir/src/glad.c.obj"
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glad" && C:/w64devkit/bin/gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT extern/glad/CMakeFiles/glad.dir/src/glad.c.obj -MF CMakeFiles/glad.dir/src/glad.c.obj.d -o CMakeFiles/glad.dir/src/glad.c.obj -c "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glad/src/glad.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object extern/glad/CMakeFiles/glad.dir/src/glad.c.obj"
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glad" && C:/w64devkit/bin/gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT extern/glad/CMakeFiles/glad.dir/src/glad.c.obj -MF CMakeFiles/glad.dir/src/glad.c.obj.d -o CMakeFiles/glad.dir/src/glad.c.obj -c "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glad/src/glad.c"
 
 extern/glad/CMakeFiles/glad.dir/src/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/glad.dir/src/glad.c.i"
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glad" && C:/w64devkit/bin/gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glad/src/glad.c" > CMakeFiles/glad.dir/src/glad.c.i
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glad" && C:/w64devkit/bin/gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glad/src/glad.c" > CMakeFiles/glad.dir/src/glad.c.i
 
 extern/glad/CMakeFiles/glad.dir/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/glad.dir/src/glad.c.s"
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glad" && C:/w64devkit/bin/gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glad/src/glad.c" -o CMakeFiles/glad.dir/src/glad.c.s
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glad" && C:/w64devkit/bin/gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glad/src/glad.c" -o CMakeFiles/glad.dir/src/glad.c.s
 
 # Object files for target glad
 glad_OBJECTS = \
@@ -94,19 +94,19 @@ glad_EXTERNAL_OBJECTS =
 extern/glad/libglad.a: extern/glad/CMakeFiles/glad.dir/src/glad.c.obj
 extern/glad/libglad.a: extern/glad/CMakeFiles/glad.dir/build.make
 extern/glad/libglad.a: extern/glad/CMakeFiles/glad.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libglad.a"
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glad" && $(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean_target.cmake
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glad" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glad.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libglad.a"
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glad" && $(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean_target.cmake
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glad" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glad.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 extern/glad/CMakeFiles/glad.dir/build: extern/glad/libglad.a
 .PHONY : extern/glad/CMakeFiles/glad.dir/build
 
 extern/glad/CMakeFiles/glad.dir/clean:
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glad" && $(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean.cmake
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glad" && $(CMAKE_COMMAND) -P CMakeFiles/glad.dir/cmake_clean.cmake
 .PHONY : extern/glad/CMakeFiles/glad.dir/clean
 
 extern/glad/CMakeFiles/glad.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glad" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glad" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glad/CMakeFiles/glad.dir/DependInfo.cmake" "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glad" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glad" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glad/CMakeFiles/glad.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : extern/glad/CMakeFiles/glad.dir/depend
 

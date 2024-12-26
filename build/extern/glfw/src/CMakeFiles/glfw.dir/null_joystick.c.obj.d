@@ -1,7 +1,7 @@
 extern/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.obj: \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glfw/src/null_joystick.c \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glfw/src/internal.h \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glfw/include/GLFW/glfw3.h \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glfw/src/null_joystick.c \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glfw/src/internal.h \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glfw/include/GLFW/glfw3.h \
  C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stddef.h \
  C:/w64devkit/x86_64-w64-mingw32/include/stddef.h \
  C:/w64devkit/x86_64-w64-mingw32/include/crtdefs.h \
@@ -13,9 +13,9 @@ extern/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.obj: \
  C:/w64devkit/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
  C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdint.h \
  C:/w64devkit/x86_64-w64-mingw32/include/stdint.h \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glfw/src/platform.h \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glfw/src/null_platform.h \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glfw/src/win32_platform.h \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glfw/src/platform.h \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glfw/src/null_platform.h \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glfw/src/win32_platform.h \
  C:/w64devkit/x86_64-w64-mingw32/include/wctype.h \
  C:/w64devkit/x86_64-w64-mingw32/include/windows.h \
  C:/w64devkit/x86_64-w64-mingw32/include/sdkddkver.h \
@@ -236,8 +236,8 @@ extern/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.obj: \
  C:/w64devkit/x86_64-w64-mingw32/include/_mingw_dxhelper.h \
  C:/w64devkit/x86_64-w64-mingw32/include/xinput.h \
  C:/w64devkit/x86_64-w64-mingw32/include/dbt.h \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glfw/src/null_joystick.h \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glfw/src/win32_joystick.h \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glfw/src/win32_thread.h \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glfw/src/win32_time.h \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glfw/include/GLFW/glfw3native.h
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glfw/src/null_joystick.h \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glfw/src/win32_joystick.h \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glfw/src/win32_thread.h \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glfw/src/win32_time.h \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glfw/include/GLFW/glfw3native.h

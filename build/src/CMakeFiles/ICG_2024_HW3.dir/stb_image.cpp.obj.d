@@ -1,6 +1,6 @@
 src/CMakeFiles/ICG_2024_HW3.dir/stb_image.cpp.obj: \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/src/stb_image.cpp \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/src/header/stb_image.h \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/stb_image.cpp \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/stb_image.h \
  C:/w64devkit/x86_64-w64-mingw32/include/stdio.h \
  C:/w64devkit/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
  C:/w64devkit/x86_64-w64-mingw32/include/corecrt.h \

@@ -1,4 +1,4 @@
-# Install script for directory: C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glfw/docs
+# Install script for directory: C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glfw/docs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

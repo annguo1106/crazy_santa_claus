@@ -1,9 +1,9 @@
 
-if (NOT EXISTS "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glfw/install_manifest.txt")
-    message(FATAL_ERROR "Cannot find install manifest: \"C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glfw/install_manifest.txt\"")
+if (NOT EXISTS "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glfw/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: \"C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glfw/install_manifest.txt\"")
 endif()
 
-file(READ "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glfw/install_manifest.txt" files)
+file(READ "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glfw/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 
 foreach (file ${files})

@@ -1,4 +1,4 @@
-# Install script for directory: C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus
+# Install script for directory: C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,8 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/src/cmake_install.cmake")
-  include("C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/cmake_install.cmake")
+  include("C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/src/cmake_install.cmake")
+  include("C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/cmake_install.cmake")
 
 endif()
 
@@ -59,6 +59,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

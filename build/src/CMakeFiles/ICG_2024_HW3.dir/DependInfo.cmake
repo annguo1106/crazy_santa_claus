@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/src/main.cpp" "src/CMakeFiles/ICG_2024_HW3.dir/main.cpp.obj" "gcc" "src/CMakeFiles/ICG_2024_HW3.dir/main.cpp.obj.d"
-  "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/src/object.cpp" "src/CMakeFiles/ICG_2024_HW3.dir/object.cpp.obj" "gcc" "src/CMakeFiles/ICG_2024_HW3.dir/object.cpp.obj.d"
-  "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/src/shader.cpp" "src/CMakeFiles/ICG_2024_HW3.dir/shader.cpp.obj" "gcc" "src/CMakeFiles/ICG_2024_HW3.dir/shader.cpp.obj.d"
-  "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/src/stb_image.cpp" "src/CMakeFiles/ICG_2024_HW3.dir/stb_image.cpp.obj" "gcc" "src/CMakeFiles/ICG_2024_HW3.dir/stb_image.cpp.obj.d"
+  "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/src/main.cpp" "src/CMakeFiles/ICG_2024_HW3.dir/main.cpp.obj" "gcc" "src/CMakeFiles/ICG_2024_HW3.dir/main.cpp.obj.d"
+  "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/src/object.cpp" "src/CMakeFiles/ICG_2024_HW3.dir/object.cpp.obj" "gcc" "src/CMakeFiles/ICG_2024_HW3.dir/object.cpp.obj.d"
+  "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/src/shader.cpp" "src/CMakeFiles/ICG_2024_HW3.dir/shader.cpp.obj" "gcc" "src/CMakeFiles/ICG_2024_HW3.dir/shader.cpp.obj.d"
+  "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/src/stb_image.cpp" "src/CMakeFiles/ICG_2024_HW3.dir/stb_image.cpp.obj" "gcc" "src/CMakeFiles/ICG_2024_HW3.dir/stb_image.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,5 +1,5 @@
 extern/glad/CMakeFiles/glad.dir/src/glad.c.obj: \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glad/src/glad.c \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glad/src/glad.c \
  C:/w64devkit/x86_64-w64-mingw32/include/stdio.h \
  C:/w64devkit/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
  C:/w64devkit/x86_64-w64-mingw32/include/corecrt.h \
@@ -23,8 +23,8 @@ extern/glad/CMakeFiles/glad.dir/src/glad.c.obj: \
  C:/w64devkit/x86_64-w64-mingw32/include/errno.h \
  C:/w64devkit/x86_64-w64-mingw32/include/string.h \
  C:/w64devkit/x86_64-w64-mingw32/include/sec_api/string_s.h \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glad/include/glad/glad.h \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/crazy_santa_claus/extern/glad/include/KHR/khrplatform.h \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glad/include/glad/glad.h \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glad/include/KHR/khrplatform.h \
  C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdint.h \
  C:/w64devkit/x86_64-w64-mingw32/include/stdint.h \
  C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stddef.h \

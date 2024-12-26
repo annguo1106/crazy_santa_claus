@@ -69,6 +69,17 @@ int moveDir = -1;
 glm::mat4 cameraModel;
 glm::mat4 santaModel;
 
+
+// handle sun and cube map
+glm::vec3 sunPosition;
+float timeFactor;
+float timeofDay = glm::pi<float>();
+float timeSpeed = 0.005f;
+// glm::mat4 sunModel;
+float transFactor = 0.0f;
+bool night2day = 0;
+bool day2night = 0;
+
 //////////////////////////////////////////////////////////////////////////
 // Parameter setup, 
 // You can change any of the settings if you want
@@ -173,8 +184,11 @@ void shader_setup(){
 
     std::vector<std::string> shadingMethod = {
         "default",                              // default shading
-        "bling-phong", "gouraud", "metallic",   // addional shading effects (basic)
-        "glass_schlick", "glass_empricial",     // addional shading effects (advanced)
+        "rainbow",
+        "water",
+        "watertrans",
+        // "bling-phong", "gouraud", "metallic",   // addional shading effects (basic)
+        // "glass_schlick", "glass_empricial",     // addional shading effects (advanced)
     };
 
     for(int i=0; i<shadingMethod.size(); i++){
@@ -297,6 +311,25 @@ void update(){
     cameraModel = glm::mat4(1.0f);
     cameraModel = glm::rotate(cameraModel, glm::radians(camera.rotationY), camera.up);
     cameraModel = glm::translate(cameraModel, camera.position);
+
+    // handle sun of day
+    sunPosition = glm::vec3(sin(timeofDay), cos(timeofDay), 0.0f);
+    timeFactor = glm::clamp((sunPosition.y + 1.0f) / 2.0f, 0.0f, 1.0f);
+    transFactor = timeFactor;
+    if (day2night) {
+        if (timeofDay < glm::pi<float>()) timeofDay += timeSpeed;
+        // if (timeofDay > 2.0f * glm::pi<float>()) {
+        //     timeofDay -= 2.0f * glm::pi<float>();
+        // }
+    }
+    if (night2day) {
+        if (timeofDay > 0.0f) timeofDay -= timeSpeed;
+        // if (timeofDay > 2.0f * glm::pi<float>()) {
+        //     timeofDay -= 2.0f * glm::pi<float>();
+        // }
+    }
+    
+    
 }
 
 void render(){
@@ -316,7 +349,7 @@ void render(){
     shaderPrograms[shaderProgramIndex]->set_uniform_value("ourTexture", 0);
     // TODO 1
     // Set uniform value for each shader program
-    // shaderPrograms[shaderProgramIndex]->set_uniform_value("cameraPos", glm::vec3(cameraModel[3]));
+    shaderPrograms[shaderProgramIndex]->set_uniform_value("cameraPos", glm::vec3(cameraModel[3]));
     // shaderPrograms[shaderProgramIndex]->set_uniform_value("lightPos", light.position);
     // shaderPrograms[shaderProgramIndex]->set_uniform_value("lightAmb", light.ambient);
     // shaderPrograms[shaderProgramIndex]->set_uniform_value("lightDiff", light.diffuse);
@@ -325,7 +358,13 @@ void render(){
     // shaderPrograms[shaderProgramIndex]->set_uniform_value("matAmb", material.ambient);
     // shaderPrograms[shaderProgramIndex]->set_uniform_value("matDiff", material.diffuse);
     // shaderPrograms[shaderProgramIndex]->set_uniform_value("matSpec", material.specular);
-    // shaderPrograms[shaderProgramIndex]->set_uniform_value("envTexture", cubemapTexture);
+    float currentTime = glfwGetTime();
+    shaderPrograms[shaderProgramIndex]->set_uniform_value("time", currentTime);
+    shaderPrograms[shaderProgramIndex]->set_uniform_value("distortionScale", 0.05f);
+    shaderPrograms[shaderProgramIndex]->set_uniform_value("timeFactor", timeFactor);
+    shaderPrograms[shaderProgramIndex]->set_uniform_value("noiseScale", 0.5f);
+    shaderPrograms[shaderProgramIndex]->set_uniform_value("amplitude", 0.1f);
+    shaderPrograms[shaderProgramIndex]->set_uniform_value("transFactor", transFactor);
     santa.object->render();
     // shaderPrograms[shaderProgramIndex]->set_uniform_value("model", helicopterBladeModel);
     // helicopterBlade.object->render();
@@ -343,6 +382,8 @@ void render(){
     cubemapShader->use();
     cubemapShader->set_uniform_value("projection", projection);
     cubemapShader->set_uniform_value("view", cubemapView);
+    cubemapShader->set_uniform_value("timeFactor", timeFactor);
+    // cubemapShader->set_uniform_value("time", glfwGetTime());
     glDepthFunc(GL_LEQUAL); // Render skybox after all objects
     glBindVertexArray(cubemapVAO);
     glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
@@ -426,6 +467,19 @@ void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods
         shaderProgramIndex = 4;
     if (key == GLFW_KEY_5 && (action == GLFW_REPEAT || action == GLFW_PRESS))
         shaderProgramIndex = 5;
+    if (key == GLFW_KEY_M && (action == GLFW_PRESS)) {  // to day
+        transFactor = 0.0f;
+        night2day = 1;
+        day2night = 0;
+        timeofDay = glm::pi<float>();  // mid night
+    }
+    if (key == GLFW_KEY_N && (action == GLFW_PRESS)) {  // to night
+        transFactor = 0.0f;
+        day2night = 1;
+        night2day = 0;
+        timeofDay = 0.0f;  // day
+    }
+    
 
     // camera movement
     float cameraSpeed = 0.5f;

@@ -53,10 +53,10 @@ RM = "C:/Program Files/CMake/bin/cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus"
+CMAKE_SOURCE_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build"
+CMAKE_BINARY_DIR = "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build"
 
 # Utility rule file for uninstall.
 
@@ -67,7 +67,7 @@ include extern/glfw/CMakeFiles/uninstall.dir/compiler_depend.make
 include extern/glfw/CMakeFiles/uninstall.dir/progress.make
 
 extern/glfw/CMakeFiles/uninstall:
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glfw" && "C:/Program Files/CMake/bin/cmake.exe" -P "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glfw/cmake_uninstall.cmake"
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glfw" && "C:/Program Files/CMake/bin/cmake.exe" -P "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glfw/cmake_uninstall.cmake"
 
 uninstall: extern/glfw/CMakeFiles/uninstall
 uninstall: extern/glfw/CMakeFiles/uninstall.dir/build.make
@@ -78,10 +78,10 @@ extern/glfw/CMakeFiles/uninstall.dir/build: uninstall
 .PHONY : extern/glfw/CMakeFiles/uninstall.dir/build
 
 extern/glfw/CMakeFiles/uninstall.dir/clean:
-	cd "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glfw" && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
+	cd "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glfw" && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
 .PHONY : extern/glfw/CMakeFiles/uninstall.dir/clean
 
 extern/glfw/CMakeFiles/uninstall.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/extern/glfw" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glfw" "C:/D/NYCUCS/third grade course/first semester/ICG/crazy_santa_claus/build/extern/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake" "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glfw" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glfw" "C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/build/extern/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : extern/glfw/CMakeFiles/uninstall.dir/depend
 
