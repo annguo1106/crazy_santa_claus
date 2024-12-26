@@ -108,8 +108,8 @@ void material_setup(){
 
 void santa_setup () {
     #if defined(__linux__) || defined(__APPLE__)
-        std::string objDir = "../../src/asset/obj/santa/";
-        std::string textureDir = "../../src/asset/texture/";
+        std::string objDir = "../../src/asset/obj/";
+        std::string textureDir = "../../src/asset/texture/santa";
     #else
         std::string objDir = "..\\..\\src\\asset\\obj\\";
         std::string textureDir = "..\\..\\src\\asset\\texture\\santa\\";
