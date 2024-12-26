@@ -58,14 +58,16 @@ shader_program_t* cubemapShader;
 light_t light;
 material_t material;
 camera_t camera;
-model_t helicopter;
-model_t helicopterBlade;
+// model_t helicopter;
+// model_t helicopterBlade;
+model_t santa;
 
 // model matrix
 int moveDir = -1;
-glm::mat4 helicopterModel;
-glm::mat4 helicopterBladeModel;
+// glm::mat4 helicopterModel;
+// glm::mat4 helicopterBladeModel;
 glm::mat4 cameraModel;
+glm::mat4 santaModel;
 
 //////////////////////////////////////////////////////////////////////////
 // Parameter setup, 
@@ -93,33 +95,70 @@ void material_setup(){
 }
 //////////////////////////////////////////////////////////////////////////
 
-void model_setup(){
+void santa_setup () {
+    #if defined(__linux__) || defined(__APPLE__)
+        std::string objDir = "../../src/asset/obj/santa/";
+        std::string textureDir = "../../src/asset/texture/";
+    #else
+        std::string objDir = "..\\..\\src\\asset\\obj\\";
+        std::string textureDir = "..\\..\\src\\asset\\texture\\santa\\";
+    #endif
+    santaModel = glm::mat4(1.0f);
 
-// Load the object and texture for each model here 
+    santa.position = glm::vec3(0, -20, 0);
+    santa.scale = glm::vec3(0.25, 0.25, 0.25);
+    santa.rotation = glm::vec3(-90.0f, 0.0f, 0.0f);
 
-#if defined(__linux__) || defined(__APPLE__)
-    std::string objDir = "../../src/asset/obj/";
-    std::string textureDir = "../../src/asset/texture/";
-#else
-    std::string objDir = "..\\..\\src\\asset\\obj\\";
-    std::string textureDir = "..\\..\\src\\asset\\texture\\";
-#endif
-    helicopterModel = glm::mat4(1.0f);
-
-    helicopter.position = glm::vec3(0.0f, -50.0f, 0.0f);
-    helicopter.scale = glm::vec3(0.1f, 0.1f, 0.1f);
-    helicopter.rotation = glm::vec3(0.0f, 0.0f, 0.0f);
-    helicopter.object = new Object(objDir + "helicopter_body.obj");
-    helicopter.object->load_to_buffer();
-    helicopter.object->load_texture(textureDir + "helicopter_red.jpg");
-
-    helicopterBlade.position = helicopter.position;
-    helicopterBlade.scale = helicopter.scale;
-    helicopterBlade.rotation = helicopter.rotation;
-    helicopterBlade.object = new Object(objDir + "helicopter_blade.obj");
-    helicopterBlade.object->load_to_buffer();
-    helicopterBlade.object->load_texture(textureDir + "helicopter_red.jpg");
+    santa.object = new Object(objDir + "santa.obj");
+    printf("santa object loaded\n");
+    
+    santa.object->load_material(textureDir + "santa.mtl");
+    santa.object->load_to_buffer();
+    printf("load material success\n");
+    for (const auto &material : santa.object->materials) {
+        printf("load %s\n", material.second.fileName.c_str());
+        std::string texturePath = material.second.fileName;
+        std::string materialName = material.first;
+        std::ifstream file(texturePath);
+        if (!file.good()) {
+            std::cerr << "file not exist: " << texturePath << "\n";
+            return; 
+        }
+        santa.object->load_texture(texturePath);
+        printf("santa texture load\n");
+        santa.object->materials[materialName].textureID = santa.object->get_texture();
+        // santa.object->textureIDs[material.first] = santa.objectget_texture();
+    }
 }
+
+
+// void model_setup(){
+
+// // Load the object and texture for each model here 
+
+// #if defined(__linux__) || defined(__APPLE__)
+//     std::string objDir = "../../src/asset/obj/";
+//     std::string textureDir = "../../src/asset/texture/";
+// #else
+//     std::string objDir = "..\\..\\src\\asset\\obj\\";
+//     std::string textureDir = "..\\..\\src\\asset\\texture\\";
+// #endif
+//     helicopterModel = glm::mat4(1.0f);
+
+//     helicopter.position = glm::vec3(0.0f, -50.0f, 0.0f);
+//     helicopter.scale = glm::vec3(0.1f, 0.1f, 0.1f);
+//     helicopter.rotation = glm::vec3(0.0f, 0.0f, 0.0f);
+//     helicopter.object = new Object(objDir + "helicopter_body.obj");
+//     helicopter.object->load_to_buffer();
+//     helicopter.object->load_texture(textureDir + "helicopter_red.jpg");
+
+//     helicopterBlade.position = helicopter.position;
+//     helicopterBlade.scale = helicopter.scale;
+//     helicopterBlade.rotation = helicopter.rotation;
+//     helicopterBlade.object = new Object(objDir + "helicopter_blade.obj");
+//     helicopterBlade.object->load_to_buffer();
+//     helicopterBlade.object->load_texture(textureDir + "helicopter_red.jpg");
+// }
 
 
 void shader_setup(){
@@ -203,7 +242,8 @@ void setup(){
 
     // Initialize shader model camera light material
     light_setup();
-    model_setup();
+    // model_setup();
+    santa_setup();
     shader_setup();
     camera_setup();
     cubemap_setup();
@@ -232,21 +272,26 @@ void update(){
     
 // Update the heicopter position, camera position, rotation, etc.
 
-    helicopter.position.y += moveDir;
-    if(helicopter.position.y > 20.0 || helicopter.position.y < -100.0){
-        moveDir = -moveDir;
-    }
+    // helicopter.position.y += moveDir;
+    // if(helicopter.position.y > 20.0 || helicopter.position.y < -100.0){
+    //     moveDir = -moveDir;
+    // }
 
-    helicopterBlade.rotation.y += 10;
-    if(helicopterBlade.rotation.y > 360.0){
-        helicopterBlade.rotation.y = 0.0;
-    }
+    // helicopterBlade.rotation.y += 10;
+    // if(helicopterBlade.rotation.y > 360.0){
+    //     helicopterBlade.rotation.y = 0.0;
+    // }
 
-    helicopterModel = glm::mat4(1.0f);
-    helicopterModel = glm::scale(helicopterModel, helicopter.scale);
-    helicopterModel = glm::translate(helicopterModel, helicopter.position);
+    // helicopterModel = glm::mat4(1.0f);
+    // helicopterModel = glm::scale(helicopterModel, helicopter.scale);
+    // helicopterModel = glm::translate(helicopterModel, helicopter.position);
 
-    helicopterBladeModel = glm::rotate(helicopterModel, glm::radians(helicopterBlade.rotation.y), glm::vec3(0.0, 1.0, 0.0));
+    // helicopterBladeModel = glm::rotate(helicopterModel, glm::radians(helicopterBlade.rotation.y), glm::vec3(0.0, 1.0, 0.0));
+    santaModel = glm::mat4(1.0f);
+    santaModel = glm::translate(santaModel, santa.position);
+    // santaModel = glm::rotate(santaModel, glm::radians(santa.rotation.x), glm::vec3(0.0, 1.0, 0.0));
+    santaModel = glm::rotate(santaModel, glm::radians(-90.0f), glm::vec3(1.0, 0.0, 0.0));
+    santaModel = glm::scale(santaModel, santa.scale);
 
     camera.rotationY = (camera.rotationY > 360.0) ? 0.0 : camera.rotationY;
     cameraModel = glm::mat4(1.0f);
@@ -265,25 +310,25 @@ void render(){
 
     // Set matrix for view, projection, model transformation
     shaderPrograms[shaderProgramIndex]->use();
-    shaderPrograms[shaderProgramIndex]->set_uniform_value("model", helicopterModel);
+    shaderPrograms[shaderProgramIndex]->set_uniform_value("model", santaModel);
     shaderPrograms[shaderProgramIndex]->set_uniform_value("view", view);
     shaderPrograms[shaderProgramIndex]->set_uniform_value("projection", projection);
-
+    shaderPrograms[shaderProgramIndex]->set_uniform_value("ourTexture", 0);
     // TODO 1
     // Set uniform value for each shader program
-    shaderPrograms[shaderProgramIndex]->set_uniform_value("cameraPos", glm::vec3(cameraModel[3]));
-    shaderPrograms[shaderProgramIndex]->set_uniform_value("lightPos", light.position);
-    shaderPrograms[shaderProgramIndex]->set_uniform_value("lightAmb", light.ambient);
-    shaderPrograms[shaderProgramIndex]->set_uniform_value("lightDiff", light.diffuse);
-    shaderPrograms[shaderProgramIndex]->set_uniform_value("lightSpec", light.specular);
-    shaderPrograms[shaderProgramIndex]->set_uniform_value("matGloss", material.gloss);
-    shaderPrograms[shaderProgramIndex]->set_uniform_value("matAmb", material.ambient);
-    shaderPrograms[shaderProgramIndex]->set_uniform_value("matDiff", material.diffuse);
-    shaderPrograms[shaderProgramIndex]->set_uniform_value("matSpec", material.specular);
+    // shaderPrograms[shaderProgramIndex]->set_uniform_value("cameraPos", glm::vec3(cameraModel[3]));
+    // shaderPrograms[shaderProgramIndex]->set_uniform_value("lightPos", light.position);
+    // shaderPrograms[shaderProgramIndex]->set_uniform_value("lightAmb", light.ambient);
+    // shaderPrograms[shaderProgramIndex]->set_uniform_value("lightDiff", light.diffuse);
+    // shaderPrograms[shaderProgramIndex]->set_uniform_value("lightSpec", light.specular);
+    // shaderPrograms[shaderProgramIndex]->set_uniform_value("matGloss", material.gloss);
+    // shaderPrograms[shaderProgramIndex]->set_uniform_value("matAmb", material.ambient);
+    // shaderPrograms[shaderProgramIndex]->set_uniform_value("matDiff", material.diffuse);
+    // shaderPrograms[shaderProgramIndex]->set_uniform_value("matSpec", material.specular);
     // shaderPrograms[shaderProgramIndex]->set_uniform_value("envTexture", cubemapTexture);
-    helicopter.object->render();
-    shaderPrograms[shaderProgramIndex]->set_uniform_value("model", helicopterBladeModel);
-    helicopterBlade.object->render();
+    santa.object->render();
+    // shaderPrograms[shaderProgramIndex]->set_uniform_value("model", helicopterBladeModel);
+    // helicopterBlade.object->render();
     shaderPrograms[shaderProgramIndex]->release();
 
     // TODO 4-2 
