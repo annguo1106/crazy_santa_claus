@@ -80,6 +80,27 @@ float angleSpeed = 0.1f;
 float rotationAngle = 0;
 float treeRotateDegree = 0.5f;
 
+int colorball_amount = 1000;
+int snowball_amount = 500;
+
+float colorball_radius = 50.0f;
+float colorball_offset = 10.0f;
+
+float snowball_radius = 50.0f;
+float snowball_offset = 25.0f;
+float snowball_heaven = 50;
+float snowball_ground = 0;
+float* verticalSpeeds;
+float lastFrameTime = 0.0f;
+
+glm::mat4* snowballMatrices;
+glm::mat4* colorballMatrices;
+
+// frame control
+float tree_render_duration = 2.5;
+float colorball_render_duration = 3;
+float snowball_render_duration = 3;
+
 //////////////////////////////////////////////////////////////////////////
 // Parameter setup, 
 // You can change any of the settings if you want
@@ -278,43 +299,9 @@ void setup(){
     // }, nullptr);
 }
 
-void update(){
-    
-// Update the heicopter position, camera position, rotation, etc.
-    camera.rotationY = (camera.rotationY > 360.0) ? 0.0 : camera.rotationY;
-    cameraModel = glm::mat4(1.0f);
-    cameraModel = glm::rotate(cameraModel, glm::radians(camera.rotationY), camera.up);
-    cameraModel = glm::translate(cameraModel, camera.position);
-
-    // tree bomb time counter update
-    timing += 0.005;
-    time_countdown = (timing > 5 || (time_countdown != 0 && time_countdown < 10)) ? time_countdown + 0.01 : 0;
-    timing = (time_countdown != 0) ? 0 : timing;
-
-    // colorball rotate update
-    colorball.rotation.y = (1) ? colorball.rotation.y + 10 : colorball.rotation.y;
-    colorball.rotation.y = (colorball.rotation.y > 360.0) ? 0 : colorball.rotation.y;
-    colorballModel = glm::mat4(1.0f);
-    colorballModel = glm::scale(colorballModel, colorball.scale);
-    colorballModel = glm::rotate(colorballModel, glm::radians(colorball.rotation.y), glm::vec3(0, 1, 0));
-    colorballModel = glm::translate(colorballModel, colorball.position);
-
-    // tree rotate update
-    treeRotateDegree = max(0.5, time_countdown * time_countdown * 0.4);
-    tree.rotation.y = (tree_IsRotate && time_countdown) ? tree.rotation.y + treeRotateDegree : tree.rotation.y;
-    tree.rotation.y = (tree.rotation.y > 360.0) ? 0 : tree.rotation.y;
-    treeModel = glm::mat4(1.0f);
-    treeModel = glm::rotate(treeModel, glm::radians(tree.rotation.y), glm::vec3(0, 1, 0));
-    treeModel = glm::scale(treeModel, tree.scale);
-    treeModel = glm::translate(treeModel, tree.position);
-
-    // particle rotation update
-    rotationAngle = glfwGetTime() * angleSpeed;
-}
-
 glm::mat4* colorballMatrices_generate(int amount) {
-    float radius = 50.0f;
-    float offset = 10.0f;
+    float radius = colorball_radius;
+    float offset = colorball_offset;
 
     glm::mat4* particleMatrices = new glm::mat4[amount];
     for (int i = 0; i < amount; ++i) {
@@ -323,7 +310,7 @@ glm::mat4* colorballMatrices_generate(int amount) {
 
         float x = sin(glm::radians(angle)) * radius + displacement;
         displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
-        float y = displacement * 0.4f;
+        float y = displacement * 0.2f;
         displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
         float z = cos(glm::radians(angle)) * radius + displacement;
 
@@ -339,6 +326,127 @@ glm::mat4* colorballMatrices_generate(int amount) {
         particleMatrices[i] = model;
     }
     return particleMatrices;
+}
+
+glm::mat4* snowballMatrices_generate(int amount) {
+    float radius = snowball_radius;
+    float offset = snowball_offset;
+    float initialHeight = snowball_heaven;
+    float groundLevel = snowball_ground;
+
+    glm::mat4* particleMatrices = new glm::mat4[amount];
+    verticalSpeeds = new float[amount];
+    for (int i = 0; i < amount; i++) verticalSpeeds[i] = (rand() % 50) / 100.0f + 0.5f;
+    // for (int i = 0; i < amount; i++) verticalSpeeds[i] = 10;
+    for (int i = 0; i < amount; i++) {
+        float angle = (float)i / (float)amount * 360.0f;
+        float displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+
+        float x = sin(glm::radians(angle)) * radius + displacement;
+        displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+        float y = initialHeight;
+        displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+        float z = cos(glm::radians(angle)) * radius + displacement;
+
+        glm::mat4 model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(x, y, z));
+        float scale = (rand() % 20) / 300.0f + 0.05f;
+        model = glm::scale(model, glm::vec3(scale));
+        float rotAngle = (rand() % 360);
+        model = glm::rotate(model, glm::radians(rotAngle), glm::vec3(0.4f, 0.6f, 0.8f));
+
+        particleMatrices[i] = model;
+    }
+    return particleMatrices;
+}
+
+void snowball_update(float deltaTime) {
+    float initialHeight = snowball_heaven;
+    float groundLevel = snowball_ground;
+
+    for (int i = 0; i < snowball_amount; i++) {
+        glm::vec3 position = glm::vec3(snowballMatrices[i][3]);
+        position.y -= verticalSpeeds[i] * deltaTime;
+
+        if (position.y <= groundLevel) {
+            // printf("position.y <= groundLevel\n");
+            position.y = initialHeight;
+            
+            float angle = (float)i / (float)snowball_amount * 360.0f;
+            float radius = snowball_radius;
+            float offset = snowball_offset;
+            float displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+            
+            position.x = sin(glm::radians(angle)) * radius + displacement;
+            displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
+            position.z = cos(glm::radians(angle)) * radius + displacement;
+        }
+
+        glm::mat4 model = glm::mat4(1.0f);
+        model = glm::translate(model, position);
+
+        float scale = (rand() % 20) / 300.0f + 0.05f;
+        model = glm::scale(model, glm::vec3(scale));
+
+        float rotAngle = (rand() % 360);
+        model = glm::rotate(model, glm::radians(rotAngle), glm::vec3(0.4f, 0.6f, 0.8f));
+
+        snowballMatrices[i] = model;
+    } 
+}
+
+void update(){
+    
+// Update the heicopter position, camera position, rotation, etc.
+    camera.rotationY = (camera.rotationY > 360.0) ? 0.0 : camera.rotationY;
+    cameraModel = glm::mat4(1.0f);
+    cameraModel = glm::rotate(cameraModel, glm::radians(camera.rotationY), camera.up);
+    cameraModel = glm::translate(cameraModel, camera.position);
+
+    // tree bomb time counter update
+    timing += 0.005;
+    time_countdown = (timing > 100 || (time_countdown != 0 && time_countdown < 4)) ? time_countdown + 0.01 : 0;
+    timing = (time_countdown != 0) ? 0 : timing;
+
+    // colorball rotate update
+    colorball.rotation.y = (1) ? colorball.rotation.y + 10 : colorball.rotation.y;
+    colorball.rotation.y = (colorball.rotation.y > 360.0) ? 0 : colorball.rotation.y;
+    colorballModel = glm::mat4(1.0f);
+    colorballModel = glm::scale(colorballModel, colorball.scale);
+    colorballModel = glm::rotate(colorballModel, glm::radians(colorball.rotation.y), glm::vec3(0, 1, 0));
+    colorballModel = glm::translate(colorballModel, colorball.position);
+
+    // tree rotate update
+    treeRotateDegree = max(0.5, time_countdown * time_countdown * 3.0);
+    tree.rotation.y = (tree_IsRotate && time_countdown) ? tree.rotation.y + treeRotateDegree : tree.rotation.y;
+    tree.rotation.y = (tree.rotation.y > 360.0) ? 0 : tree.rotation.y;
+    treeModel = glm::mat4(1.0f);
+    treeModel = glm::rotate(treeModel, glm::radians(tree.rotation.y), glm::vec3(0, 1, 0));
+    treeModel = glm::scale(treeModel, tree.scale);
+    treeModel = glm::translate(treeModel, tree.position);
+
+    // colorball update
+    /*rotationAngle = glfwGetTime() * angleSpeed;
+    if (colorballMatrices) {
+        for (int i = 0; i < colorball_amount; ++i) {
+            float angle = (float)i / (float)colorball_amount * 360.0f + rotationAngle;
+            float x = sin(glm::radians(angle)) * colorball_radius;
+            float z = cos(glm::radians(angle)) * colorball_radius;
+
+            glm::mat4 model = glm::mat4(1.0f);
+            model = glm::translate(model, glm::vec3(x, 0.0f, z));
+            model = glm::scale(model, glm::vec3(0.1f));
+            float rotAngle = (rand() % 360);
+            model = glm::rotate(model, glm::radians(rotAngle), glm::vec3(0.4f, 0.6f, 0.8f));
+
+            colorballMatrices[i] = model;
+        }
+    }*/
+
+    // snowball update
+    float deltaTime = glfwGetTime() - lastFrameTime;
+    lastFrameTime = glfwGetTime();
+    if (snowballMatrices) snowball_update(deltaTime * 4);
 }
 
 void render(){
@@ -357,7 +465,7 @@ void render(){
     shaderPrograms[DEFAULT]->set_uniform_value("projection", projection);
     shaderPrograms[DEFAULT]->set_uniform_value("timing", timing);
     glUniform3fv(glGetUniformLocation(DEFAULT, "explosionCenter"), 1, glm::value_ptr(explosionCenter));
-    tree.object->render();
+    if (timing < tree_render_duration) tree.object->render();
     shaderPrograms[DEFAULT]->release();
 
     // Bomb tree render
@@ -371,27 +479,47 @@ void render(){
         float angle = 5 * _;
         auto subtreeModel = glm::rotate(treeModel, glm::radians(angle), glm::vec3(0, 1, 0));
         shaderPrograms[BOMB_RANDOM]->set_uniform_value("model", subtreeModel);
-        tree.object->render();
+        if (timing < tree_render_duration) tree.object->render();
     }
     shaderPrograms[BOMB_RANDOM]->release();
 
-    int amount = 1000;
-    glm::mat4* particleMatrices = colorballMatrices_generate(amount);
+    // Colorball render
+    // if (colorballMatrices) delete[] colorballMatrices;
+    colorballMatrices = colorballMatrices_generate(colorball_amount);
     shaderPrograms[COLORBALL]->use();
     shaderPrograms[COLORBALL]->set_uniform_value("view", view);
     shaderPrograms[COLORBALL]->set_uniform_value("projection", projection);
 
-    for (int i = 0; i < amount; ++i) {
+    for (int i = 0; i < colorball_amount; i++) {
         float rand1 = rand() % 100 / 100.0f;
         float rand2 = rand() % 100 / 100.0f;
         float rand3 = rand() % 100 / 100.0f;
-        shaderPrograms[COLORBALL]->set_uniform_value("model", particleMatrices[i]);
+        shaderPrograms[COLORBALL]->set_uniform_value("model", colorballMatrices[i]);
         shaderPrograms[COLORBALL]->set_uniform_value("rand1", rand1);
         shaderPrograms[COLORBALL]->set_uniform_value("rand2", rand2);
         shaderPrograms[COLORBALL]->set_uniform_value("rand3", rand3);
-        colorball.object->render();
+        if (timing < colorball_render_duration) colorball.object->render();
     }
     shaderPrograms[COLORBALL]->release();
+
+    // Snowball render
+    // if (snowballMatrices) delete[] snowballMatrices;
+    if (!snowballMatrices) snowballMatrices = snowballMatrices_generate(snowball_amount);
+    shaderPrograms[SNOWBALL]->use();
+    shaderPrograms[SNOWBALL]->set_uniform_value("view", view);
+    shaderPrograms[SNOWBALL]->set_uniform_value("projection", projection);
+
+    for (int i = 0; i < snowball_amount; i++){
+        float rand1 = rand() % 100 / 100.0f;
+        float rand2 = rand() % 100 / 100.0f;
+        float rand3 = rand() % 100 / 100.0f;
+        shaderPrograms[SNOWBALL]->set_uniform_value("model", snowballMatrices[i]);
+        shaderPrograms[SNOWBALL]->set_uniform_value("rand1", rand1);
+        shaderPrograms[SNOWBALL]->set_uniform_value("rand2", rand2);
+        shaderPrograms[SNOWBALL]->set_uniform_value("rand3", rand3);
+        if (timing < snowball_render_duration) snowball.object->render();
+    }
+    shaderPrograms[SNOWBALL]->release();
 
     /*// cubemap
     // glm::mat4 cubemapView = glm::mat4(glm::mat3(view));
@@ -422,7 +550,7 @@ int main() {
 #endif
 
     // glfw window creation
-    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "HW3-your student id", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Crazy Santa Claus", NULL, NULL);
     if (window == NULL) {
         std::cerr << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
@@ -472,6 +600,11 @@ void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods
     // shader program selection
     if (key == GLFW_KEY_R && (action == GLFW_REPEAT || action == GLFW_PRESS)) 
         tree_IsRotate = !tree_IsRotate;
+
+    if (key == GLFW_KEY_1 && (action == GLFW_REPEAT || action == GLFW_PRESS)) {
+        timing = 0;
+        time_countdown = 0.0001;
+    }
 
     // camera movement
     float cameraSpeed = 0.5f;
