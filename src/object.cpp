@@ -1,11 +1,11 @@
-#include "header/object.h"
+#include "header/objectMat.h"
 #include <glad/glad.h>
 #include "header/stb_image.h"
 #include <unordered_map>
 #include <sstream>
 #include <fstream>
 
-void Object::load_material(const std::string &filepath) {
+void ObjectMat::load_material(const std::string &filepath) {
     std::ifstream mtlFile(filepath);
     if (!mtlFile.is_open()) {
         std::cerr << "Failed to open MTL file: " << filepath << std::endl;
@@ -30,7 +30,7 @@ void Object::load_material(const std::string &filepath) {
     mtlFile.close();
 }
 
-void Object::load_texture(const std::string &filepath){
+void ObjectMat::load_texture(const std::string &filepath){
     glEnable(GL_TEXTURE_2D);
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
@@ -52,7 +52,7 @@ void Object::load_texture(const std::string &filepath){
     stbi_image_free(data);
 }
 
-void Object::load_to_buffer(){
+void ObjectMat::load_to_buffer(){
     for (auto it = materials.begin(); it != materials.end(); it++) {
         std::string materialName = it->first;
         Mesh& mesh = it->second;
@@ -93,7 +93,7 @@ void Object::load_to_buffer(){
     }    
 }
 
-void Object::render(){
+void ObjectMat::render(){
     // glGenVertexArrays(1, &VAO);
     // glBindVertexArray(VAO);
     // for (const auto &[material, mesh] : materials) {
@@ -110,7 +110,7 @@ void Object::render(){
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, mesh.textureID);
         // }
-        // Draw the Objectmat
+        // Draw the ObjectMatmat
         // glBindVertexArray(mesh.VAO);
         GLint currentVAO;
         glGetIntegerv(GL_VERTEX_ARRAY_BINDING, &currentVAO);
@@ -131,6 +131,6 @@ void Object::render(){
     // glBindVertexArray(0);
 }
 
-unsigned int Object::get_texture () {
+unsigned int ObjectMat::get_texture () {
     return texture;
 }

@@ -6,7 +6,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "header/cube.h"
-#include "header/object.h"
+#include "header/objectMat.h"
 #include "header/shader.h"
 #include "header/stb_image.h"
 
@@ -32,7 +32,7 @@ struct model_t{
     glm::vec3 position;
     glm::vec3 scale;
     glm::vec3 rotation;
-    Object* object;
+    ObjectMat* objectmat;
 };
 
 struct camera_t{
@@ -80,6 +80,10 @@ float transFactor = 0.0f;
 bool night2day = 0;
 bool day2night = 0;
 
+// melting
+float timing = 0;
+bool isMelting = false;
+
 //////////////////////////////////////////////////////////////////////////
 // Parameter setup, 
 // You can change any of the settings if you want
@@ -120,13 +124,13 @@ void santa_setup () {
     santa.scale = glm::vec3(0.25, 0.25, 0.25);
     santa.rotation = glm::vec3(-90.0f, 0.0f, 0.0f);
 
-    santa.object = new Object(objDir + "santa.obj");
+    santa.objectmat = new ObjectMat(objDir + "santa.obj");
     printf("santa object loaded\n");
     
-    santa.object->load_material(textureDir + "santa.mtl");
-    santa.object->load_to_buffer();
+    santa.objectmat->load_material(textureDir + "santa.mtl");
+    santa.objectmat->load_to_buffer();
     printf("load material success\n");
-    for (const auto &material : santa.object->materials) {
+    for (const auto &material : santa.objectmat->materials) {
         printf("load %s\n", material.second.fileName.c_str());
         std::string texturePath = material.second.fileName;
         std::string materialName = material.first;
@@ -135,9 +139,9 @@ void santa_setup () {
             std::cerr << "file not exist: " << texturePath << "\n";
             return; 
         }
-        santa.object->load_texture(texturePath);
+        santa.objectmat->load_texture(texturePath);
         printf("santa texture load\n");
-        santa.object->materials[materialName].textureID = santa.object->get_texture();
+        santa.objectmat->materials[materialName].textureID = santa.objectmat->get_texture();
         // santa.object->textureIDs[material.first] = santa.objectget_texture();
     }
 }
@@ -186,6 +190,7 @@ void shader_setup(){
         "default",                              // default shading
         "rainbow",
         "water",
+        "watertrans",
         "watertrans",
         "wave",
         // "bling-phong", "gouraud", "metallic",   // addional shading effects (basic)
@@ -284,24 +289,6 @@ void setup(){
 }
 
 void update(){
-    
-// Update the heicopter position, camera position, rotation, etc.
-
-    // helicopter.position.y += moveDir;
-    // if(helicopter.position.y > 20.0 || helicopter.position.y < -100.0){
-    //     moveDir = -moveDir;
-    // }
-
-    // helicopterBlade.rotation.y += 10;
-    // if(helicopterBlade.rotation.y > 360.0){
-    //     helicopterBlade.rotation.y = 0.0;
-    // }
-
-    // helicopterModel = glm::mat4(1.0f);
-    // helicopterModel = glm::scale(helicopterModel, helicopter.scale);
-    // helicopterModel = glm::translate(helicopterModel, helicopter.position);
-
-    // helicopterBladeModel = glm::rotate(helicopterModel, glm::radians(helicopterBlade.rotation.y), glm::vec3(0.0, 1.0, 0.0));
     santaModel = glm::mat4(1.0f);
     santaModel = glm::translate(santaModel, santa.position);
     // santaModel = glm::rotate(santaModel, glm::radians(santa.rotation.x), glm::vec3(0.0, 1.0, 0.0));
@@ -325,12 +312,10 @@ void update(){
     }
     if (night2day) {
         if (timeofDay > 0.0f) timeofDay -= timeSpeed;
-        // if (timeofDay > 2.0f * glm::pi<float>()) {
-        //     timeofDay -= 2.0f * glm::pi<float>();
-        // }
     }
     
-    
+    // melting
+    timing += 0.005;
 }
 
 void render(){
@@ -366,7 +351,10 @@ void render(){
     shaderPrograms[shaderProgramIndex]->set_uniform_value("noiseScale", 0.5f);
     shaderPrograms[shaderProgramIndex]->set_uniform_value("amplitude", 0.1f);
     shaderPrograms[shaderProgramIndex]->set_uniform_value("transFactor", transFactor);
-    santa.object->render();
+    //在液化的part加
+    shaderPrograms[shaderProgramIndex]->set_uniform_value("timing", timing);
+    shaderPrograms[shaderProgramIndex]->set_uniform_value("isMelting", isMelting);
+    santa.objectmat->render();
     // shaderPrograms[shaderProgramIndex]->set_uniform_value("model", helicopterBladeModel);
     // helicopterBlade.object->render();
     shaderPrograms[shaderProgramIndex]->release();
@@ -460,12 +448,19 @@ void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods
         shaderProgramIndex = 0;
     if (key == GLFW_KEY_1 && (action == GLFW_REPEAT || action == GLFW_PRESS)) 
         shaderProgramIndex = 1;
-    if (key == GLFW_KEY_2 && (action == GLFW_REPEAT || action == GLFW_PRESS)) 
+    if (key == GLFW_KEY_2 && (action == GLFW_REPEAT || action == GLFW_PRESS)) {
         shaderProgramIndex = 2;
-    if (key == GLFW_KEY_3 && (action == GLFW_REPEAT || action == GLFW_PRESS))
+        printf("is melting %d\n", isMelting);
+        isMelting = !isMelting;
+        timing = 0;
+    }
+       
+    if (key == GLFW_KEY_3 && (action == GLFW_REPEAT || action == GLFW_PRESS)) {
         shaderProgramIndex = 3;
-    if (key == GLFW_KEY_4 && (action == GLFW_REPEAT || action == GLFW_PRESS))
+    }
+    if (key == GLFW_KEY_4 && (action == GLFW_REPEAT || action == GLFW_PRESS)) {
         shaderProgramIndex = 4;
+    }
     if (key == GLFW_KEY_5 && (action == GLFW_REPEAT || action == GLFW_PRESS))
         shaderProgramIndex = 5;
     if (key == GLFW_KEY_M && (action == GLFW_PRESS)) {  // to day
