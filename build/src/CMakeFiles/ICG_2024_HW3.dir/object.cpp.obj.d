@@ -1,6 +1,6 @@
 src/CMakeFiles/ICG_2024_HW3.dir/object.cpp.obj: \
  C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/object.cpp \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/object.h \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/objectMat.h \
  C:/w64devkit/x86_64-w64-mingw32/include/stdio.h \
  C:/w64devkit/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
  C:/w64devkit/x86_64-w64-mingw32/include/corecrt.h \

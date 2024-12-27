@@ -189,7 +189,7 @@ src/CMakeFiles/ICG_2024_HW3.dir/main.cpp.obj
  C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/vec4.hpp
  C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/vector_relational.hpp
  C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/src/header/cube.h
- C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/src/header/object.h
+ C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/src/header/objectMat.h
  C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/src/header/shader.h
  C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/src/header/stb_image.h
  C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/algorithm
@@ -629,7 +629,7 @@ src/CMakeFiles/ICG_2024_HW3.dir/object.cpp.obj
  C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/vec3.hpp
  C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/vec4.hpp
  C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/vector_relational.hpp
- C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/src/header/object.h
+ C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/src/header/objectMat.h
  C:/D/NYCUCS/third grade course/first semester/ICG/tmp/crazy_santa_claus/src/header/stb_image.h
  C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/backward/binders.h
  C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bit

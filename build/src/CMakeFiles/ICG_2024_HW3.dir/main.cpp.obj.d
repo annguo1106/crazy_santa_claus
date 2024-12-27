@@ -487,6 +487,6 @@ src/CMakeFiles/ICG_2024_HW3.dir/main.cpp.obj: \
  C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/ext/vector_uint1_sized.hpp \
  C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/gtc/type_ptr.inl \
  C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/cube.h \
- C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/object.h \
+ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/objectMat.h \
  C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/shader.h \
  C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/stb_image.h

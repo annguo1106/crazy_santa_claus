@@ -188,7 +188,7 @@ src/CMakeFiles/ICG_2024_HW3.dir/main.cpp.obj: C:/D/NYCUCS/third\ grade\ course/f
   C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/vec4.hpp \
   C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/vector_relational.hpp \
   C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/cube.h \
-  C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/object.h \
+  C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/objectMat.h \
   C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/shader.h \
   C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/stb_image.h \
   C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/algorithm \
@@ -627,7 +627,7 @@ src/CMakeFiles/ICG_2024_HW3.dir/object.cpp.obj: C:/D/NYCUCS/third\ grade\ course
   C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/vec3.hpp \
   C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/vec4.hpp \
   C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/vector_relational.hpp \
-  C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/object.h \
+  C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/objectMat.h \
   C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/stb_image.h \
   C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/backward/binders.h \
   C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bit \
@@ -1473,6 +1473,8 @@ C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/exter
 
 C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/fstream:
 
+C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/objectMat.h:
+
 C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/detail/type_mat2x2.hpp:
 
 C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/extern/glm/glm/detail/func_vector_relational.inl:
@@ -1945,12 +1947,6 @@ C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/unique_lock.h:
 
 C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/cube.h:
 
-C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/random.h:
-
-C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/locale_classes.tcc:
-
-C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/object.h:
-
 C:/D/NYCUCS/third\ grade\ course/first\ semester/ICG/tmp/crazy_santa_claus/src/header/shader.h:
 
 C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/algorithm:
@@ -2040,6 +2036,10 @@ C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/stl_queue.h:
 C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/hashtable_policy.h:
 
 C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/indirect_array.h:
+
+C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/random.h:
+
+C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/locale_classes.tcc:
 
 C:/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/locale_conv.h:
 
