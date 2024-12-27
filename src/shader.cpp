@@ -23,6 +23,9 @@ void shader_program_t::add_shader(std::string& filepath, unsigned int type){
     if(type == GL_VERTEX_SHADER){
         std::cout << "adding vert shader from " << filepath << std::endl;  
     }
+    else if(type == GL_GEOMETRY_SHADER){
+        std::cout << "adding geom shader from " << filepath << std::endl;
+    }
     else if(type == GL_FRAGMENT_SHADER){
         std::cout << "adding frag shader from " << filepath << std::endl;
     }
@@ -102,31 +105,26 @@ void shader_program_t::release(){
 
 void shader_program_t::set_uniform_value(const char* name, const glm::mat4 &mat){
     unsigned int loc = glGetUniformLocation(program_handle, name);
-    // if (loc == -1) std::cout << "load " << name << " failed\n";
     glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(mat)); 
 }
 
 void shader_program_t::set_uniform_value(const char* name, const glm::mat3 &mat){
     unsigned int loc = glGetUniformLocation(program_handle, name);
-    // if (loc == -1) std::cout << "load " << name << " failed\n";
     glUniformMatrix3fv(loc, 1, GL_FALSE, glm::value_ptr(mat));
 }
 
 void shader_program_t::set_uniform_value(const char* name, const glm::vec3& vec){
     unsigned int loc = glGetUniformLocation(program_handle, name);
-    // if (loc == -1) std::cout << "load " << name << " failed\n";
     glUniform3fv(loc, 1, glm::value_ptr(vec));
 
 }
 
 void shader_program_t::set_uniform_value(const char* name, const float value){
     unsigned int loc = glGetUniformLocation(program_handle, name);
-    // if (loc == -1) std::cout << "load " << name << " failed\n";
     glUniform1f(loc, value);
 }
 
 void shader_program_t::set_uniform_value(const char* name, const int value){
     unsigned int loc = glGetUniformLocation(program_handle, name);
-    // if (loc == -1) std::cout << "load " << name << " failed\n";
     glUniform1i(loc, value);
 }

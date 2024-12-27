@@ -3,6 +3,7 @@ add_executable(ICG_2024_HW3
 "stb_image.cpp"
 "shader.cpp"
 "object.cpp"
+"objectMat.cpp"
 ) #列所有的cpp
 target_link_libraries(ICG_2024_HW3
 glfw
