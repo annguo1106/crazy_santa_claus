@@ -1,7 +1,7 @@
 # Crazy Santa Claus
 
 ## Overview
-This is the final project of Introduction to Computer Graph 2024 fall. This project is designed to recreate a magical and whimsical Christmas scene featuring a "Crazy Santa Claus." The goal is to demonstrate creative use of vertex shaders, fragment shaders, geometry shaders, cubemap transitions, and animations to deliver a visually appealing and interactive experience.
+This is the final project of Introduction to Computer Graph in 2024 fall semester. This project is designed to recreate a magical and whimsical Christmas scene featuring a "Crazy Santa Claus." The goal is to demonstrate creative use of vertex shaders, fragment shaders, geometry shaders, cubemap transitions, and animations to deliver a visually appealing and interactive experience.
 
 ## Project Structure
 ```
@@ -58,6 +58,10 @@ This is the final project of Introduction to Computer Graph 2024 fall. This proj
 6. Press `M` (Transition to day).
 7. Press `4` (Waving version).
 8. Press `2` (Melting version).
+
+### Demo Video
+- **url**: [crazy santa claus](https://youtu.be/h8wDiFlMpAk?si=5fjh3gXmPxJBZi2C)
+
 
 ## Assets
 - **Santa Claus Model**: [Santa Claus v1](https://free3d.com/3d-model/santa-claus-v1--996990.html)
